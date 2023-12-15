@@ -80,7 +80,6 @@ console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager. "
 
 // Opdracht 2
 const userInput = prompt("Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]");
-console.log(userInput);
 if (userInput === "marketing") {
     console.log("Je koos " + userInput + ". " + departments.marketing.description)
 }
@@ -118,9 +117,26 @@ else {
 // }
 
 // Opdracht 4
-console.log()
-
-
-
+console.log(userInput + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[userInput.toLowerCase()].numberOfEmployees + " medewerkers.");
+const userInputDepartment = prompt(`Je koos ${userInput}. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.\n
+    0: ${departments[userInput].jobs[0].title},\n
+    1: ${departments[userInput].jobs[1].title},\n
+    2: ${departments[userInput].jobs[2].title},\n
+    3: ${departments[userInput].jobs[3].title}\n`);
+if (userInputDepartment === "0") {
+    console.log(departments[userInput].jobs[0].description);
+}
+else if (userInputDepartment === "1"){
+    console.log(departments[userInput].jobs[1].description);
+}
+else if (userInputDepartment === "2"){
+    console.log(departments[userInput].jobs[2].description);
+}
+else if (userInputDepartment === "3"){
+    console.log(departments[userInput].jobs[3].description);
+}
+else {
+    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+}
 
 
